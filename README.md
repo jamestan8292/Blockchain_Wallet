@@ -32,19 +32,25 @@ The mnemonic seed phrase (provided by Ganache) must be included in the .env text
 
         MNEMONIC = 'MNEMONIC SEED PHRASE HERE FROM GANACHE'
 
-The client's wallet is shown under the ACCOUNTS tab in Ganache. The first address (INDEX 0) is the one used in this application as the client's wallet address.
+
+The application user interface in Streamlit. This screen showed a payment has been made by Client to Lane for an amount of 6 Ether.
 ![image1](transaction_images/image1.png)
 
 <br/>
 
-The transactions and the associated hashes can be seen at the TRANSACTIONS tab in Ganache.
-![image 2](transaction_images/image2.png)
+The client's and the Professionals wallets is shown under the ACCOUNTS tab in Ganache. 
+![image2](transaction_images/image2.png)
+
+<br/>
+
+The transaction and the associated hash can be seen at the TRANSACTIONS tab in Ganache.
+![image 3](transaction_images/image3.png)
 
 
 <br/>
 
 This image shows the details of the first transaction/payment.
-![image 3](transaction_images/image3.png)
+![image 4](transaction_images/image4.png)
 
 
 <br/>
