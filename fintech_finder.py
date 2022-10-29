@@ -1,10 +1,10 @@
 # Blockchain Cryptocurrency Wallet
 
 ################################################################################
-# This is a blockchain wallet Fintech Finder demonstation app in the form 
+# This is a blockchain wallet Fintech Finder demonstration app in the form 
 # of a Fintech client looking to hire professionals.
 # 
-# Ganache is used to establish a local blockchain network for the purpose of
+# Ganache is used to establish a local ethereum blockchain network for the purpose of
 # testing the application
 
 ################################################################################
