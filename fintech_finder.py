@@ -10,6 +10,7 @@
 ################################################################################
 # Imports
 import streamlit as st
+from hexbytes import HexBytes
 from dataclasses import dataclass
 from typing import Any, List
 from web3 import Web3
@@ -25,10 +26,10 @@ from crypto_wallet import send_transaction
 # Database of Fintech Finder candidates including their name, digital address, rating and hourly cost per Ether.
 # A single Ether is currently valued at $1,500
 candidate_database = {
-    "Lane": ["Lane", "0x3F5746eFbE2c9D4E3A5A02bf45cCDf9E42B4Ba5a", "4.3", .20, "Images/lane.jpeg"],
-    "Ash": ["Ash", "0xc49989b0213a061CE3e4Bb17755EA4e8fB1c2379", "5.0", .33, "Images/ash.jpeg"],
-    "Jo": ["Jo", "0xb94935250529990B11d1ddFD00e67d1d7ff642c6", "4.7", .19, "Images/jo.jpeg"],
-    "Kendall": ["Kendall", "0xFf17EAb8d09788cADEBBebF4C2f3Ef4feD59a3Fc", "4.1", .16, "Images/kendall.jpeg"]
+    "Lane": ["Lane", "0xEf52D6342d04477d38113bafFf7fF7E54999C167", "4.3", .20, "Images/lane.jpeg"],
+    "Ash": ["Ash", "0xd86eB4993D061742788a40ADE330f3c8cafB1440", "5.0", .33, "Images/ash.jpeg"],
+    "Jo": ["Jo", "0xdeE1A999928935fa74f1de5305E78C318eF2f605", "4.7", .19, "Images/jo.jpeg"],
+    "Kendall": ["Kendall", "0x60d685f7B624E41B128780345380c259ADAa4b68", "4.1", .16, "Images/kendall.jpeg"]
 }
 
 # A list of the FinTech Finder candidates first names
@@ -81,9 +82,12 @@ st.sidebar.write(account.address)
 # Call `get_balance` function and pass it the client's account address
 # Write the returned ether balance to the sidebar
 
-balance = get_balance(w3, account.address)
-st.sidebar.write(balance)
+# streamlit placeholder for balance variable
+bal_p = st.sidebar.empty()    
 
+balance = get_balance(w3, account.address)
+# st.sidebar.write(balance)
+bal_p.write(balance)
 
 ##########################################
 
@@ -146,7 +150,11 @@ if st.sidebar.button("Send Transaction"):
     st.sidebar.markdown("#### Validated Transaction Hash")
 
     # Write the returned transaction hash to the screen
-    st.sidebar.write(transaction_hash)
+    st.sidebar.write(HexBytes.hex(transaction_hash))
+
+    # Update balance in client's account
+    balance = get_balance(w3, account.address)
+    bal_p.write(balance)
 
     # Show successful payment
     st.balloons()
