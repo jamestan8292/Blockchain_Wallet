@@ -1,7 +1,6 @@
 # Blockchain_Wallet
 
-This is a blockchain wallet Fintech Finder demonstration app in the form 
-of a Fintech client looking to hire professionals.
+This is a blockchain wallet demonstration in the form a Fintech Finder app, for use by a Fintech client looking to hire Fintech professionals.
 
 The application imports ethereum wallet functions (generate account, get balance, send transaction) from 'crypto_wallet.py'
 
@@ -38,18 +37,18 @@ The application user interface in Streamlit. This screen showed a payment has be
 
 <br/>
 
-The client's and the Professionals wallets is shown under the ACCOUNTS tab in Ganache. 
+The client's and the Professionals' accounts are shown under the ACCOUNTS tab in Ganache. 
 ![image2](transaction_images/image2.png)
 
 <br/>
 
-The transaction and the associated hash can be seen at the TRANSACTIONS tab in Ganache.
+The transaction and the associated hash can be seen at the TRANSACTIONS tab in Ganache. The TX HASH corresponds with the Validated Transaction Hash shown in the user interface screen (first image above)
 ![image 3](transaction_images/image3.png)
 
 
 <br/>
 
-This image shows the details of the first transaction/payment.
+This image shows the details of the transaction/payment.
 ![image 4](transaction_images/image4.png)
 
 
